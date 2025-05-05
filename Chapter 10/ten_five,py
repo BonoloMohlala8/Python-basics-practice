@@ -1,0 +1,13 @@
+from pathlib import Path 
+
+path = Path('guest_book.txt')
+
+print("Enter 'q' to quit the program")
+
+while True: 
+    names = input('Enter name: ')
+    if names.lower() == 'q':
+        break
+    path.write_text(path.read_text() + names + "\n")
+    print(f"Hi {names}, you've been added to the guest list")
+    
